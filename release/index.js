@@ -1,5 +1,5 @@
 /**
- * ngx-charts v"7.4.0" (https://github.com/swimlane/ngx-charts)
+ * ngx-charts v"7.4.1" (https://github.com/swimlane/ngx-charts)
  * Copyright 2016
  * Licensed under MIT
  */
@@ -5339,7 +5339,7 @@ var BarHorizontalComponent = /** @class */ (function (_super) {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -5389,7 +5389,7 @@ var BarLabelComponent = /** @class */ (function () {
         }
         if (this.orientation === 'horizontal') {
             this.x = this.barX + this.barWidth;
-            // if the value is negative then it's on the left of the x0. 
+            // if the value is negative then it's on the left of the x0.
             // we need to put the data label in front of the bar
             if (this.value < 0) {
                 this.x = this.x - this.horizontalPadding;
@@ -5402,7 +5402,7 @@ var BarLabelComponent = /** @class */ (function () {
             this.y = this.barY + this.barHeight / 2;
         }
         else {
-            // orientation must be "vertical"      
+            // orientation must be "vertical"
             this.x = this.barX + this.barWidth / 2;
             this.y = this.barY + this.barHeight;
             if (this.value < 0) {
@@ -9498,7 +9498,7 @@ var YAxisComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -11092,7 +11092,7 @@ function formatLabel(label) {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -11348,7 +11348,7 @@ var LegendEntryComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -11489,7 +11489,7 @@ var LegendComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -11821,7 +11821,7 @@ function tickFormat(fieldType, groupByType) {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -12897,7 +12897,7 @@ var StyleTypes;
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -13540,7 +13540,7 @@ function calculateViewDimensions(_a) {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -14093,7 +14093,7 @@ var GaugeAxisComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -14530,7 +14530,7 @@ var GaugeModule = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -16595,7 +16595,7 @@ var CardSeriesComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -17020,7 +17020,7 @@ var NumberCardModule = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -17420,7 +17420,7 @@ var PieArcComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -17839,7 +17839,7 @@ var PieGridSeriesComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -18405,7 +18405,7 @@ var PieSeriesComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -19485,7 +19485,7 @@ var TreeMapCellComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
