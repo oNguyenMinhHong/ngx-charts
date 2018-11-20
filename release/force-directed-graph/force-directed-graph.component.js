@@ -34,6 +34,7 @@ var ForceDirectedGraphComponent = /** @class */ (function (_super) {
             .force('y', forceY());
         _this.forceLink = forceLink().id(function (node) { return node.value; });
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.nodes = [];
         _this.links = [];
         _this.activeEntries = [];
@@ -53,6 +54,7 @@ var ForceDirectedGraphComponent = /** @class */ (function (_super) {
             height: this.height,
             margins: this.margin,
             showLegend: this.legend,
+            legendPosition: this.legendPosition
         });
         this.seriesDomain = this.getSeriesDomain();
         this.setColors();
@@ -99,7 +101,8 @@ var ForceDirectedGraphComponent = /** @class */ (function (_super) {
             scaleType: 'ordinal',
             domain: this.seriesDomain,
             colors: this.colors,
-            title: this.legendTitle
+            title: this.legendTitle,
+            position: this.legendPosition
         };
     };
     // Easier to use Angular2 event management than use d3.drag
@@ -140,6 +143,10 @@ var ForceDirectedGraphComponent = /** @class */ (function (_super) {
         Input(),
         __metadata("design:type", String)
     ], ForceDirectedGraphComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], ForceDirectedGraphComponent.prototype, "legendPosition", void 0);
     __decorate([
         Input(),
         __metadata("design:type", Array)
@@ -201,8 +208,8 @@ var ForceDirectedGraphComponent = /** @class */ (function (_super) {
             selector: 'ngx-charts-force-directed-graph',
             template: "\n    <ngx-charts-chart\n      [view]=\"[width, height]\"\n      [showLegend]=\"legend\"\n      [legendOptions]=\"legendOptions\"\n      [animations]=\"animations\"\n      (legendLabelClick)=\"onClick($event)\"\n      (legendLabelActivate)=\"onActivate($event)\"\n      (legendLabelDeactivate)=\"onDeactivate($event)\">\n      <svg:g [attr.transform]=\"transform\" class=\"force-directed-graph chart\">\n        <svg:g class=\"links\">\n          <svg:g *ngFor=\"let link of links; trackBy:trackLinkBy\">\n            <ng-template *ngIf=\"linkTemplate\"\n              [ngTemplateOutlet]=\"linkTemplate\"\n              [ngTemplateOutletContext]=\"{ $implicit: link }\">\n            </ng-template>\n            <svg:line *ngIf=\"!linkTemplate\"\n              strokeWidth=\"1\" class=\"edge\"\n              [attr.x1]=\"link.source.x\"\n              [attr.y1]=\"link.source.y\"\n              [attr.x2]=\"link.target.x\"\n              [attr.y2]=\"link.target.y\"\n            />\n          </svg:g>\n        </svg:g>\n        <svg:g class=\"nodes\">\n          <svg:g *ngFor=\"let node of nodes; trackBy:trackNodeBy\"\n            [attr.transform]=\"'translate(' + node.x + ',' + node.y + ')'\"\n            [attr.fill]=\"colors.getColor(groupResultsBy(node))\"\n            [attr.stroke]=\"colors.getColor(groupResultsBy(node))\"\n            (mousedown)=\"onDragStart(node, $event)\"\n            (click)=\"onClick({name: node.value})\"\n            ngx-tooltip\n            [tooltipDisabled]=\"tooltipDisabled\"\n            [tooltipPlacement]=\"'top'\"\n            [tooltipType]=\"'tooltip'\"\n            [tooltipTitle]=\"tooltipTemplate ? undefined : node.value\"\n            [tooltipTemplate]=\"tooltipTemplate\"\n            [tooltipContext]=\"node\">\n            <ng-template *ngIf=\"nodeTemplate\"\n              [ngTemplateOutlet]=\"nodeTemplate\"\n              [ngTemplateOutletContext]=\"{ $implicit: node }\">\n            </ng-template>\n            <svg:circle *ngIf=\"!nodeTemplate\" r=\"5\" />\n          </svg:g>\n        </svg:g>\n      </svg:g>\n    </ngx-charts-chart>\n  ",
             styleUrls: [
-                '../common/base-chart.component.css',
-                './force-directed-graph.component.css'
+                '../common/base-chart.component.scss',
+                './force-directed-graph.component.scss'
             ],
             encapsulation: ViewEncapsulation.None,
             changeDetection: ChangeDetectionStrategy.OnPush,

@@ -99,7 +99,7 @@ var BarLabelComponent = /** @class */ (function () {
         Component({
             selector: 'g[ngx-charts-bar-label]',
             template: "  \n    <svg:text   \n      class=\"textDataLabel\" \n      alignment-baseline=\"middle\"     \n      [attr.text-anchor]=\"textAnchor\"\n      [attr.transform]=\"transform\"\n      [attr.x]=\"x\" \n      [attr.y]=\"y\">\n      {{formatedValue}}     \n    </svg:text>          \n\n  ",
-            styleUrls: ['./bar-label.component.css'],
+            styleUrls: ['./bar-label.component.scss'],
             changeDetection: ChangeDetectionStrategy.OnPush
         }),
         __metadata("design:paramtypes", [ElementRef])
