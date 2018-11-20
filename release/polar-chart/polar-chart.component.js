@@ -39,6 +39,7 @@ var PolarChartComponent = /** @class */ (function (_super) {
     function PolarChartComponent() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.showGridLines = true;
         _this.curve = curveCardinalClosed;
         _this.activeEntries = [];
@@ -75,7 +76,8 @@ var PolarChartComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         var halfWidth = ~~(this.dims.width / 2);
         var halfHeight = ~~(this.dims.height / 2);
@@ -278,14 +280,16 @@ var PolarChartComponent = /** @class */ (function (_super) {
                 scaleType: this.schemeType,
                 colors: this.colors,
                 domain: this.seriesDomain,
-                title: this.legendTitle
+                title: this.legendTitle,
+                position: this.legendPosition
             };
         }
         return {
             scaleType: this.schemeType,
             colors: this.colors.scale,
             domain: this.yDomain,
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
     };
     PolarChartComponent.prototype.updateYAxisWidth = function (_a) {
@@ -335,6 +339,10 @@ var PolarChartComponent = /** @class */ (function (_super) {
         Input(),
         __metadata("design:type", String)
     ], PolarChartComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], PolarChartComponent.prototype, "legendPosition", void 0);
     __decorate([
         Input(),
         __metadata("design:type", Boolean)
